@@ -10,6 +10,28 @@ In a dynamic work environment, effective task management is crucial for team suc
 ## Background
 With the rise of remote work and dispersed teams, there is a growing need for tools that facilitate effective communication and task coordination. The Cloud-Based Task Manager addresses this need by leveraging modern web technologies to create an intuitive and responsive task management solution. The MERN stack ensures scalability, while the integration of Redux Toolkit, Headless UI, and Tailwind CSS enhances user experience and performance.
 
+## Screenshots
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="https://drive.google.com/uc?export=view&id=1svmd6JT_nXAJEoxfSmWf8GFvesXI2qA_" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=1wn5jZ-Klsmsf-Zbv01L585S0zMLxqQxx" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=1_-1Dzmd1YGry_6qeeESM9hA-9HQ7Jix-" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=1ky-NRPf5XDyI3hMABGgNHw43vx_sHfRz" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=1xZ_IzlW_QT_qFYP3iHkHAUAXQ-t_SG7i" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=172t8LhWJ7EPqWZmgEPNn5u01-TbsbLIM" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=1i0lE2MRP2Ma195e7i0xYwEGV_BAdJNAM" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=1XhSkL61-9KYxV6t7c1pl1kLiGmmrxLLV" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=15f6lUxXfuNn9MHck4gPD9FoyQCfeVFZ1" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=1rw9Vc-r2GEJFD8jEfSPEZKzItlF-KiSe" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=1V1emNreZUFa7FVgefTyuPDOV3iEETwTV" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=1uyDb3SVuvBo2t0jZjB7I3Va0z8EeGofg" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=1zFeGo_MLQTN9k2gFNyTzFxYdvGyEm2PT" width="500">
+</div>
+
+## Video
+<a href="https://drive.google.com/uc?export=download&id=14x7DYadF9gMUaH8Yx1fqOcdHXVwPczap" target="_blank">
+    🎥 Watch Video Demo
+</a>
+
 ## Features
 ### Admin Features
 #### User Management:
