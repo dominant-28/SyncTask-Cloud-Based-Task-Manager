@@ -24,6 +24,7 @@ With the rise of remote work and dispersed teams, there is a growing need for to
 - Label tasks as todo, in progress, or completed.
 - Assign priority levels (high, medium, normal, low).
 - Add and manage sub-tasks.
+- Duplicate the task.
 
 #### Asset Management:
 - Upload task assets, such as images.
@@ -56,10 +57,13 @@ With the rise of remote work and dispersed teams, there is a growing need for to
 - Provide a summary of user activities.
 - Filter tasks into todo, in progress, or completed.
 
-### Face Recognition Authentication
+#### Seaching Tasks
+- if the large number of task gather, we can search to get the specific Task by its title and discription.
+  
+#### Face Recognition Authentication
 The application includes an optional Face Recognition Authentication feature, allowing users to register and log in using facial recognition. During registration, users can capture and store their facial data securely. At login, the system matches their face to the stored data for authentication, enhancing security and user convenience. Face data is securely stored as descriptor arrays, ensuring privacy. The system utilizes models such as `face_landmark_68_model`, `face_recognition_model`, and `tiny_face_detector_model` for accurate facial recognition and authentication.
 
-### Notification System
+#### Notification System
 The Task Manager includes a real-time notification system to keep users informed about important updates. Users receive alerts for new task assignments, status changes, and comments, ensuring seamless collaboration and timely responses.
 
 ## Technologies Used
@@ -68,12 +72,21 @@ The Task Manager includes a real-time notification system to keep users informed
 - Redux Toolkit for State Management
 - Headless UI
 - Tailwind CSS
+- HTML
+- JavaScript
 
 ### Backend:
 - Node.js with Express.js
 
 ### Database:
-- MongoDB for efficient and scalable data storage.
+- MongoDB(Atlas) for efficient and scalable data storage.
 
+## Future Improvement
+- Integrating the AI in this app.
+- Intergration with the third party apps.
+- Adding feature of alert for timeline.
+- Space for chatting at individual level.
+- Integrating with the Draw.io for creating the workflow.
+  
 The Cloud-Based Task Manager is an innovative solution that brings efficiency and organization to task management within teams. By harnessing the power of the MERN stack and modern frontend technologies, the platform provides a seamless experience for both administrators and users, fostering collaboration and productivity.
 
