@@ -25,6 +25,7 @@ With the rise of remote work and dispersed teams, there is a growing need for to
   <img src="https://drive.google.com/uc?export=view&id=1V1emNreZUFa7FVgefTyuPDOV3iEETwTV" width="500">
   <img src="https://drive.google.com/uc?export=view&id=1uyDb3SVuvBo2t0jZjB7I3Va0z8EeGofg" width="500">
   <img src="https://drive.google.com/uc?export=view&id=1zFeGo_MLQTN9k2gFNyTzFxYdvGyEm2PT" width="500">
+  <img src="https://drive.google.com/uc?export=view&id=1NZlBAdoBX1h9MuB-hy1BhHDLL7uFZzfI" width="500">
 </div>
 
 ## Video
