@@ -89,6 +89,8 @@ The application includes an optional Face Recognition Authentication feature, al
 #### Notification System
 The Task Manager includes a real-time notification system to keep users informed about important updates. Users receive alerts for new task assignments, status changes, and comments, ensuring seamless collaboration and timely responses.
 
+#### Workflow Creation
+Integrated the Draw.io for creating the plans/workflows for the task management and exporting the created workflow as image and saving it to the assests of that perticular task.
 ## Technologies Used
 ### Frontend:
 - React (Vite)
