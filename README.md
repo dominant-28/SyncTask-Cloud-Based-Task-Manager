@@ -111,7 +111,7 @@ Integrated the Draw.io for creating the plans/workflows for the task management 
 - Intergration with the third party apps.
 - Adding feature of alert for timeline.
 - Space for chatting at individual level.
-- Integrating with the Draw.io for creating the workflow.
+
   
 The Cloud-Based Task Manager is an innovative solution that brings efficiency and organization to task management within teams. By harnessing the power of the MERN stack and modern frontend technologies, the platform provides a seamless experience for both administrators and users, fostering collaboration and productivity.
 
