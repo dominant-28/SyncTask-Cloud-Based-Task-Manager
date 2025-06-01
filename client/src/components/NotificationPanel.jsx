@@ -11,7 +11,7 @@ import ViewNotification from "./ViewNotification";
 
 const ICONS = {
   alert: (
-    <HiBellAlert className='h-5 w-5 text-black-300 group-hover:text-indigo-600' />
+    <HiBellAlert className='h-5 w-5 text-white ' />
   ),
   message: (
     <BiSolidMessageRounded className='h-5 w-5 text-gray-600 group-hover:text-indigo-600' />
@@ -43,7 +43,7 @@ const NotificationPanel = () => {
       name: "Mark All Read",
       href: "#",
       icon: "",
-      onClick: () => readHandler("all", ""),
+      onClick: () =>( readHandler("all", ""),close())
     }
   ];
 
@@ -78,9 +78,9 @@ const NotificationPanel = () => {
                     {data?.slice(0, 5).map((item, index) => (
                       <div
                         key={item._id + index}
-                        className='group relative flex gap-x-4 rounded-lg p-4 hover:bg-gray-500'
+                        className='group relative flex gap-x-4 rounded-lg p-4 hover:bg-gray-700'
                       >
-                        <div className='mt-1 h-8 w-8 flex items-center justify-center rounded-lg bg-gray-200 group-hover:bg-gray-400'>
+                        <div className='mt-1 h-8 w-8 flex items-center justify-center rounded-lg bg-indigo-800 group-hover:bg-voilet-500'>
                           {ICONS[item.notiType]}
                         </div>
 
@@ -109,7 +109,7 @@ const NotificationPanel = () => {
                         onClick={
                           item?.onClick ? () => item.onClick() : () => close()
                         }
-                        className='flex items-center justify-center gap-x-2.5 p-3 font-semibold text-blue-600 hover:bg-gray-500'
+                        className='flex items-center justify-center gap-x-2.5 p-3 font-semibold text-blue-600 hover:bg-gray-700'
                       >
                         {item.name}
                       </Link>

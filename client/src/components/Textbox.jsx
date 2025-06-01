@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-const Textbox = React.forwardRef(({placeholder,type,label,classname,register,name,error,onChange}, ref) => {
+const Textbox = React.forwardRef(({placeholder,type,label,classname,register,name,error,onChange,autoComplete}, ref) => {
 
   return (
     <div className='w-full flex flex-col gap-1'>{
@@ -14,6 +14,7 @@ const Textbox = React.forwardRef(({placeholder,type,label,classname,register,nam
     
       <div>
         <input 
+        autoComplete={autoComplete? autoComplete:"off"}
         type={type}
         name={name}
         placeholder={placeholder}

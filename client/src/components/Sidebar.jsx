@@ -4,6 +4,7 @@ import {MdDashboard,
     MdOutlinePending,
     MdOutlinePendingActions,
     MdSettings,
+    MdOutlineClose,
     MdTaskAlt
 } from "react-icons/md"
 import {FaTasks,FaTrashAlt,FaUsers} from "react-icons/fa"
@@ -75,7 +76,7 @@ const Navlink =({el})=>{
     )
 }
 return (
-    <div className="w-full h-full flex flex-col bg-[#211c26] gap-8 p-5 ">
+    <div className="w-full h-full flex flex-col gradient-bg gap-8 p-5 ">
         <h1 className="flex gap-3 items-center">
             
                 <img src="logo.png" alt="" width="55px"/>
@@ -84,6 +85,9 @@ return (
             <span className="text-2xl font-bold text-white">
                 SyncTask
             </span>
+            <button onClick={() => closeSideBar()} className=" flex py-8 md:hidden px-5 ml-auto ">
+              <MdOutlineClose size="25px" />
+            </button>
 
         </h1>
         <div className="flex-1 flex flex-col gap-y-5 ">

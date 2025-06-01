@@ -25,6 +25,7 @@ const Task_Type={
   completed:"bg-green-600"
 }
 export default function Tasks() {
+  const { user } = useSelector((state) => state.auth);
   const params=useParams()
   const [selected,setSelected]=useState(0)
   const [open,setOpen]=useState(false);
@@ -34,17 +35,17 @@ export default function Tasks() {
   const {data,isLoading}=useGetAllTaskQuery({
     strQuery:status,isTrashed:"",search:searchQuery
   })
-console.log(data)
   return  isLoading? (
     <div>
       <Loading/>
     </div>
   ):(
-    <div className='w-full bg-[#211c26]'>
+    <div className='w-full gradient-bg2'>
       <div className='flex items-center justify-between mb-4'>
         <Title title={status ?`${status} Tasks` :"Tasks"}/>
         {
-          !status &&<Button onClick={()=>setOpen(true)} label="Create Task" icon={<MdAdd className='text-lg'/>}
+          !status && user?.role!=="user" &&
+          <Button onClick={()=>setOpen(true)} label="Create Task" icon={<MdAdd className='text-lg'/>}
           className='flex flex-row-reverse gap-1 items-center gradient-btn text-white rounded-md py-2 2xl:py-2.5'/>
 
   

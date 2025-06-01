@@ -13,12 +13,13 @@ import { registerUser,
      activateUserProfile,
      deleteUserProfile,
      faceLogin,
-     updateFaceData} from '../controllers/userController.js'
+     updateFaceData,addTeamMember} from '../controllers/userController.js'
 
 const router =express.Router()
 router.post("/register",registerUser)
 router.post("/login",loginUser)
 router.post("/logout",logoutUser)
+router.post('/add-member', protectRoute, isAdminRoute, addTeamMember);
 router.get("/get-team",protectRoute,isAdminRoute,getTeamList)
 router.get("/notification",protectRoute,getNotificationsList)
 
@@ -39,6 +40,7 @@ router.get(
        res.redirect("http://localhost:3000/dashboard"); // Redirect to frontend/dashboard
      }
    );
+
 
 router.post('/face-login', faceLogin);  
 router.put('/face-data', protectRoute, updateFaceData); 

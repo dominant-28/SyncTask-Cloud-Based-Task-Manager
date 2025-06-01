@@ -1,6 +1,7 @@
 import User from "../modals/user.js";
 import { createJWT } from "../utils/index.js";
 import  Notice from "../modals/notification.js";
+import sendEmail from "../mailer.js";
 export const registerUser = async (req, res) => {
   try {
     const { name, email, password, isAdmin, role, title,faceData } = req.body;
@@ -29,6 +30,16 @@ export const registerUser = async (req, res) => {
       user.password = undefined;
       user.faceData=null;
       res.status(201).json(user);
+      await sendEmail(
+  email,
+  "Welcome to SyncTask!",
+  `<h3>Hello ${name},</h3>
+   <p>Thank you for joining SyncTask - The Task Manager.</p>
+   <p>Invite others, make the team, contribute to the team, manage everything properly.</p>
+   <br><p>– SyncTask Team</p>`
+);
+
+
     } else {
       return res.status(400).json({
         status: false,
@@ -66,6 +77,14 @@ export const loginUser = async (req, res) => {
       user.password = undefined;
       user.faceData=null;
       res.status(200).json(user);
+      await sendEmail(
+  email,
+  "Welcome Back to SyncTask!",
+  `<h3>Hello ${user.name},</h3>
+   <p>You have login to SyncTask</p>
+   <br><p>– SyncTask Team</p>`
+);
+
     } else {
       return res
         .status(401)
@@ -75,6 +94,61 @@ export const loginUser = async (req, res) => {
     return res.status(400).json({ status: false, message: error.message });
   }
 };
+export const addTeamMember = async (req, res) => {
+  try {
+    const { name, email, title } = req.body;
+    const adminId = req.user.userId;
+   
+    // Check if already exists
+    let user = await User.findOne({ email });
+    
+    if (user) {
+      return res.status(400).json({ status: false, message: "User already exists" });
+    }
+
+    // Create user with default password
+    const defaultPassword = "sync1234"; // let them change it later
+
+    user = await User.create({
+      name,
+      email,
+      password: defaultPassword,
+      isAdmin: false,
+      role: "user",
+      title,
+      teamAdmin: adminId,
+    });
+
+    // Add to admin's teamMembers array
+    await User.findByIdAndUpdate(adminId, {
+      $addToSet: { teamMembers: user._id },
+    });
+
+    // Optional: Send welcome notice
+    await Notice.create({
+      team: [user._id],
+      text: `👋 Welcome to SyncTask! You've been added to a team by ${req.user.name}.`,
+      notiType: "message",
+      isRead: [],
+    });
+    await sendEmail(
+  email,
+  "Welcome to SyncTask!",
+  `<h3>Hello ${name},</h3>
+   <p>You've been added to a team by ${req.user.name}.</p>
+   <p>Your login email: <b>${email}</b></p>
+   <p>Your temporary password: <b>sync1234</b></p>
+   <p>Please login and change your password.</p>
+   <br><p>– SyncTask Team</p>`
+);
+
+    res.status(201).json({ status: true, message: "Team member added successfully", user });
+
+  } catch (error) {
+    return res.status(400).json({ status: false, message: error.message });
+  }
+};
+
 
 export const logoutUser = async (req, res) => {
   try {
@@ -82,6 +156,7 @@ export const logoutUser = async (req, res) => {
       httpOnly: true,
       expires: new Date(0),
     });
+    
     res.status(200).json({ message: "Logout successful " });
   } catch (error) {
     return res.status(400).json({ status: false, message: error.message });
@@ -90,12 +165,22 @@ export const logoutUser = async (req, res) => {
 
 export const getTeamList = async (req, res) => {
   try {
-    const users =await User.find().select("name title role email isActive ")
-    res.status(200).json(users)
+    const admin = await User.findById(req.user.userId)
+      .populate({
+        path: "teamMembers",
+        select: "name title role email isActive"
+      });
+
+    if (!admin) {
+      return res.status(404).json({ status: false, message: "Admin not found" });
+    }
+     // Include the admin in the team list
+    res.status(200).json(admin.teamMembers);
   } catch (error) {
     return res.status(400).json({ status: false, message: error.message });
   }
 };
+
 
 
 export const getNotificationsList = async (req, res) => {
@@ -106,7 +191,7 @@ export const getNotificationsList = async (req, res) => {
         isRead:{$nin:[userId]},
 
       }).populate("task","title")
-
+      
       res.status(201).json(notice)
     } catch (error) {
       return res.status(400).json({ status: false, message: error.message });
@@ -146,6 +231,7 @@ export const getNotificationsList = async (req, res) => {
     try {
        const {userId}=req.user
        const {isReadType,id }=req.query
+       
        if(isReadType=="all"){
         await Notice.updateMany(
           {team:userId,isRead:{$nin: [userId]}},

@@ -18,8 +18,8 @@ const Users = () => {
  const {data,isLoading,refetch}=useGetDashboardStatsQuery()
   const [deleteuser]=useDeleteUserMutation()
   const [userAction]=useUserActionMutation()
-
-  console.log(data)
+  
+ 
   const userActionHandler = async() => {
     try {
       const result=await userAction({id:selected?._id, isActive:!selected?.isActive})

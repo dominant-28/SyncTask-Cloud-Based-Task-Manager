@@ -26,6 +26,7 @@ const userSchema=new Schema({
         type: Boolean,
         default: false
       },
+    teamMembers: [{ type: Schema.Types.ObjectId, ref: "User" }],
     isAdmin:{type:Boolean,required:true,default:false},
     task : [{type:Schema.Types.ObjectId,ref:"Task"}],
     isActive:{type:Boolean,required:true,default:true},

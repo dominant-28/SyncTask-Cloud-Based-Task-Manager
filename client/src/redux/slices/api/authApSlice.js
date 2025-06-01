@@ -31,6 +31,15 @@ export const authApSlice = apiSlice.injectEndpoints({
         url: AUTH_URL + '/face-login',
         method: 'POST',
         body: faceData,
+        credentials: "include",
+      }),
+    }),
+    addMember: builder.mutation({
+      query: (data) => ({
+        url: AUTH_URL + "/add-member",
+        method: "POST",
+        body: data,
+        credentials: "include",
       }),
     }),
     updateFaceData: builder.mutation({
@@ -38,8 +47,9 @@ export const authApSlice = apiSlice.injectEndpoints({
         url: AUTH_URL + '/face-data',
         method: 'PUT',
         body: { faceData },
+        credentials: "include",
       }),
     }),
   }),
 });
-export const { useLoginMutation, useLogoutMutation,useRegisterMutation,useFaceLoginMutation,useUpdateFaceDataMutation} = authApSlice;
+export const { useLoginMutation, useLogoutMutation,useAddMemberMutation,useRegisterMutation,useFaceLoginMutation,useUpdateFaceDataMutation} = authApSlice;

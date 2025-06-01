@@ -8,7 +8,7 @@ import Loading from "./Loading";
 import Button from "./Button";
 import { toast } from "sonner";
 import { setCredentials } from "../redux/slices/authSlice";
-import { useRegisterMutation } from "../redux/slices/api/authApSlice";
+import { useAddMemberMutation } from "../redux/slices/api/authApSlice";
 import { useUpdateUserMutation } from "../redux/slices/api/userApiSlice";
 const AddUser = ({ open, setOpen, userData }) => {
   let defaultValues = userData ?? {};
@@ -22,10 +22,11 @@ const AddUser = ({ open, setOpen, userData }) => {
     formState: { errors },
   } = useForm({ defaultValues });
 const dispatch=useDispatch()  
-const [addUser,{isLoading}]=useRegisterMutation()
+const [addMember,{isLoading}]=useAddMemberMutation()
 const [updateUser,{isLoading:isUpdating}]=useUpdateUserMutation()
   const handleOnSubmit = async(data) => {
     try {
+     
       if(userData){
         const result=await updateUser(data).unwrap()
         toast.success("Profile updated successfully")
@@ -34,7 +35,10 @@ const [updateUser,{isLoading:isUpdating}]=useUpdateUserMutation()
         }
       }
       else{
-        await addUser({...data, password: data.email}).unwrap()
+        
+        const { name, email, title } = data;
+        console.log(name,email,title)
+        await addMember({ name, email, title }).unwrap();
 
         toast.success("New User added successfully")
 
@@ -44,6 +48,7 @@ const [updateUser,{isLoading:isUpdating}]=useUpdateUserMutation()
        },1500) 
         
     } catch (error) {
+      console.log(error);
       toast.error("Something went wrong")
     }
   };

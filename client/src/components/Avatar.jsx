@@ -37,7 +37,7 @@ export default function Avatar() {
       <Menu as='div' className='relative inline-block text-left' >
         <div>
             <MenuButton className='w-10 h-10 2xl:w-12 2xl:h-12 items-center
-            justify-center rounded-full bg-[#5d4a70] text-white '>
+            justify-center rounded-full bg-[#461959] text-white border '>
                 {
                     getInitials(user?user.name:null)
                 }

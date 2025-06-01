@@ -54,7 +54,7 @@ export default function Login() {
           email: faceLoginEmail,
           faceData: descriptor
         }).unwrap();
-        console.log(result)
+       
         dispatch(setCredentials(result));
         toast.success('Face login successful!');
         navigate('/');
@@ -65,7 +65,7 @@ export default function Login() {
     }
   };
   const startFaceRecognition = () => {
-    console.log(faceLoginEmail)
+    
     // Validate email before showing face capture
     if (!faceLoginEmail || !faceLoginEmail.includes('@')) {
       toast.error('Please enter a valid email address');
@@ -113,7 +113,8 @@ export default function Login() {
       Seamless Collaboration, Effortless Task Management!
     </span>
     <p className='flex flex-col gap-0 md:gap-4 text-4xl md:text-6xl 2xl:text-7xl font-black text-center text-cyan-200'>
-      <span>Cloud-Based</span>
+      <span>SyncTask</span>
+      
       <span>Task Manager</span>
     </p>
     
@@ -126,9 +127,7 @@ export default function Login() {
       <img src="logo.png" alt="SyncTask Logo" className='relative' />
     </div>
 
-    <span className='text-teal-100 text-xl font-bold'>
-      Sign Up & Simplify Your Task Management!
-    </span>
+    
   </div>
 </div>
 
@@ -255,6 +254,7 @@ export default function Login() {
                   classname="w-full rounded-full"
                   register={register('password', { required: "Password is required" })}
                   error={errors.password ? errors.password.message : ""}
+                  autocomplete="new-password"
                 />
                 
                 {isRegister && (
@@ -306,7 +306,7 @@ export default function Login() {
                 )}
                 
                 {!isRegister && (
-                  <span className='text-sm text-gray-100 hover:text-teal-300 hover:underline cursor-pointer'>
+                  <span className='text-sm text-teal-200 hover:text-teal-300 hover:underline cursor-pointer'>
                     Forget Password?
                   </span>
                 )}
@@ -323,7 +323,7 @@ export default function Login() {
                 
                 {!isRegister && (
                   <p
-                    className="text-sm text-gray-100 cursor-pointer text-center"
+                    className="text-sm text-teal-200 cursor-pointer text-center"
                     onClick={() => setUseFaceLogin(true)}
                   >
                     Login with Face Recognition
@@ -331,7 +331,7 @@ export default function Login() {
                 )}
               </div>
               
-              <p className='text-sm text-gray-100 cursor-pointer text-center' onClick={() => setIsRegister(!isRegister)}>
+              <p className='text-sm text-teal-200 cursor-pointer text-center' onClick={() => setIsRegister(!isRegister)}>
                 {isRegister ? 'Already have an account? Log in' : 'New here? Register now'}
               </p>
             </form>

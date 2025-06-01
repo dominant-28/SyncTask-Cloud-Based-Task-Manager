@@ -151,19 +151,20 @@
   }
 }
 .gradient-btn {
-    background: linear-gradient(to right, #ff7eb3, #8b5cf6);
+    background: linear-gradient(to right, #a041d7, #320246);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: opacity 0.3s ease-in-out;
+    
   }
   
   .gradient-btn:hover {
     opacity: 0.9;
 }
 .loginpage{
-  background: linear-gradient(135deg, #0D1F4B, #3C096C, #8E24AA);
+  background: linear-gradient(135deg, #3f0561, #22022d, #1c0223);
 }
 .logo {
   width: 100px;
@@ -173,4 +174,18 @@
 .logo:hover {
   transform: scale(1.1);
   box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.7);
+}
+.gradient-bg {
+  background: linear-gradient(to right, #0c0c0c, #301642);
+  color: white;
+ 
+
+  
+}
+.gradient-bg2 {
+  background: linear-gradient(to right, #0c0212, #1a0526);
+  color: white;
+  
+
+  
 }

@@ -11,7 +11,7 @@ import { errorhandler,routeNotFound } from "./middlewares/errorMiddleware.js";
 import routes from "./routes/index.js";
 dotenv.config()
 
-console.log("MongoDB URL:", process.env.MONGODB_URL);
+
 dbConnection()
 
 
