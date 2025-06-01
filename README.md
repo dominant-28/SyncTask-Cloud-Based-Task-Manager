@@ -53,12 +53,10 @@ The platform supports advanced task workflows, real-time notifications, face rec
 
 ---
 
-## 📷 Screenshots
+## 📁 View All Screenshots
 
-![Dashboard](https://drive.google.com/uc?export=view&id=1svmd6JT_nXAJEoxfSmWf8GFvesXI2qA_)
-![Tasks](https://drive.google.com/uc?export=view&id=1wn5jZ-Klsmsf-Zbv01L585S0zMLxqQxx)
-![Face Recognition Login](https://drive.google.com/uc?export=view&id=1_-1Dzmd1YGry_6qeeESM9hA-9HQ7Jix-)
-![Draw.io Workflow](https://drive.google.com/uc?export=view&id=1ky-NRPf5XDyI3hMABGgNHw43vx_sHfRz)
+👉 [Click here to view all screenshots](https://drive.google.com/drive/folders/1_pPcJVpHpmbLv4BZnza8ptK59P_cUYkS?usp=sharing)
+
 
 ---
 
