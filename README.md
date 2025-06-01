@@ -52,7 +52,10 @@ The platform supports advanced task workflows, real-time notifications, face rec
 - Update user profile, credentials, and passwords.
 
 ---
+### 🔗 Demo  
+[![Vercel App](https://img.shields.io/badge/Vercel-Demo-black?logo=vercel)](https://the-task-manager-ten.vercel.app/)
 
+---
 ## 📁 View All Screenshots
 
 👉 [Click here to view all screenshots](https://drive.google.com/drive/folders/1_pPcJVpHpmbLv4BZnza8ptK59P_cUYkS?usp=sharing)
