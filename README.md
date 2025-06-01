@@ -1,4 +1,4 @@
-# 🚀 SyncTask – Cloud-Based Task Manager
+# 🚀 SyncTask – The Task Manager
 
 **SyncTask** is a scalable, feature-rich web application designed to streamline team collaboration and task management. Built using the **MERN stack** (MongoDB, Express.js, React, Node.js), it provides a responsive, role-based interface for real-time task assignment, tracking, and communication.
 
