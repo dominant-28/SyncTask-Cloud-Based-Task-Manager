@@ -57,13 +57,6 @@ The platform supports advanced task workflows, real-time notifications, face rec
 
 👉 [Click here to view all screenshots](https://drive.google.com/drive/folders/1_pPcJVpHpmbLv4BZnza8ptK59P_cUYkS?usp=sharing)
 
-
----
-
-## 🎥 Demo
-
-📽️ [**Watch the Demo Video**](https://drive.google.com/uc?export=download&id=14x7DYadF9gMUaH8Yx1fqOcdHXVwPczap)
-
 ---
 
 ## 🧰 Tech Stack
