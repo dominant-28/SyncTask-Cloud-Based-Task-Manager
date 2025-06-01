@@ -19,7 +19,7 @@ const PORT=process.env.PORT|| 6000
 const app=express()
 app.use(
     cors({
-    origin:['http://localhost:3000','http://localhost:3001','https://the-task-manager.onrender.com'],
+    origin:['http://localhost:3000','http://localhost:3001','https://the-task-manager-qi7c5arry-dominant-28s-projects.vercel.app'],
     methods:['GET',"POST","PUT","DELETE"],
     credentials:true,
 }))
