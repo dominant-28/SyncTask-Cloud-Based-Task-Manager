@@ -1,7 +1,7 @@
 import React from 'react'
 import {MdOutlineSearch} from "react-icons/md"
 import {useDispatch,useSelector} from "react-redux"
-import Avatar from './avatar';
+import Avatar from './Avatar';
 import { setOpenSidebar } from '../redux/slices/authSlice';
 import NotificationPanel from "./NotificationPanel";
 import { setSearchQuery } from '../redux/slices/searchSlice';
